@@ -1,12 +1,12 @@
-streamlit==0.87.0
+streamlit
 matplotlib
-emoji==1.7.0
+emoji
 seaborn
 pandas
 Wordcloud
 nltk
 urlextract
-nltk==3.6.2
+nltk
 numpy
 scikit-learn
-plotly==5.14.1
+plotly
