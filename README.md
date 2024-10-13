@@ -41,7 +41,7 @@ You can perform all these analyses on group chats as well as individual chats.
 
 ## Demo
 
-You can see the demo of _WhatsChat_ by visiting the following link: [WhatsChat](https://shrudex-whatschat.streamlit.app/)
+You can see the demo of _WhatsChat_ by visiting the following link: [WhatsChat](https://whatschat-shivam.streamlit.app/)
 
 ## Usage
 
