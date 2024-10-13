@@ -51,7 +51,7 @@ if uploadedFile is not None:
             st.header(numURL)
 
         #monthly timeline
-        st.title("Monthly Timeline⌚")
+        st.header("Monthly Timeline⌚")
         timeline = helper.monthlyTimeline(selectedUser, dataFrame)
         plt.style.use('dark_background')
         plt.figure(figsize=(12, 3))
@@ -63,7 +63,7 @@ if uploadedFile is not None:
         
         
         #monthly activity
-        st.title("Monthly Activity📊")
+        st.header("Monthly Activity📊")
         col1, col2 = st.columns(2)
         monthActivitySeries, monthActivity = helper.monthActivity(selectedUser, dataFrame)
         monthActivity = monthActivity.sort_values('message')
@@ -89,7 +89,7 @@ if uploadedFile is not None:
 
 
         #daily timeline
-        st.title("Daily Timeline📅")
+        st.header("Daily Timeline📅")
         dailyTimeline = helper.dailyTimeline(selectedUser, dataFrame)
         plt.style.use('dark_background')
         plt.figure(figsize=(14, 3))
@@ -100,7 +100,7 @@ if uploadedFile is not None:
         st.pyplot(plt)
 
         #daily activity
-        st.title("Daily Activity📊")
+        st.header("Daily Activity📊")
         col1, col2 = st.columns(2)
         weekActivitySeries, weekActivity = helper.weekActivity(selectedUser, dataFrame)
         weekActivity = weekActivity.sort_values('message')
@@ -125,7 +125,7 @@ if uploadedFile is not None:
         
         
         #weekly activity
-        st.title("Weekly Activity by Time Period📲")
+        st.header("Weekly Activity by Time Period📲")
         activity = helper.activity(selectedUser, dataFrame)
         fig, ax = plt.subplots(figsize=(10, 2.5))
         ax = sns.heatmap(activity)
@@ -136,7 +136,7 @@ if uploadedFile is not None:
         
         
         #day-wise activity
-        st.title("Day-wise Activity🗓️")
+        st.header("Day-wise Activity🗓️")
         h1, h2 = helper.hourActivity(selectedUser, dataFrame)
         tabs = st.multiselect("Select day(s) to display",['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'])
         #tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'])
@@ -159,7 +159,7 @@ if uploadedFile is not None:
 
         #top chatters
         if selectedUser == 'Overall':
-            st.title("Top Chatters🗣️")
+            st.header("Top Chatters🗣️")
             topChatter, topChatterPercent = helper.mostBusy(dataFrame)
             col1, col2 = st.columns(2)
 
@@ -184,7 +184,7 @@ if uploadedFile is not None:
         #top words used
         mostCommon = helper.mostCommon(selectedUser, dataFrame)
         if (mostCommon.shape[0] != 0):
-            st.title("Top Words Used🥇")
+            st.header("Top Words Used🥇")
 
             fig, ax = plt.subplots()
             plt.ylabel('Message').set_color('yellow')
@@ -199,13 +199,13 @@ if uploadedFile is not None:
         
         col1, col2 = st.columns(2)
         with col1:
-            st.title("Wordcloud🌬️")   
+            st.header("Wordcloud🌬️")   
             fig, ax = plt.subplots()
             ax.imshow(df_wc)
             st.pyplot(fig)
             
         with col2:
-            st.title("Top Words' Count🗣️")
+            st.header("Top Words' Count🗣️")
             st.dataframe(mostCommon)
             
         
@@ -213,7 +213,7 @@ if uploadedFile is not None:
         # emoji analysis
         emoji_df = helper.mostEmoji(selectedUser, dataFrame)
         if (emoji_df.shape[0] != 0):
-            st.title("Emoji Analysis😳")
+            st.header("Emoji Analysis😳")
 
             col1, col2 = st.columns(2)
 
@@ -229,7 +229,7 @@ if uploadedFile is not None:
                 st.pyplot(fig)
         
         #message extractor
-        st.title("Messages Extractor🪓")
+        st.header("Messages Extractor🪓")
         inputDate = st.text_input("Enter date in format : 19-08-2003")
         messageExtract = helper.messageExtractor(selectedUser, dataFrame, inputDate)
         if st.button("Extract"):
@@ -239,7 +239,7 @@ if uploadedFile is not None:
                 st.write("No conversation(s) on", inputDate)  
 
         #reply time analysis
-        st.title("Reply Time Analysis⏩")
+        st.header("Reply Time Analysis⏩")
         timeDifference, timeSelected = helper.replyTime(selectedUser, dataFrame)
         if (selectedUser!='Overall'):
             st.write("Average Reply Time by", selectedUser, "is", timeSelected)
@@ -262,7 +262,7 @@ if uploadedFile is not None:
                 
         
         # User Sentiment Analysis
-        st.title("Sentiment Analysis")
+        st.header("Sentiment Analysis")
 
         # Perform sentiment analysis for the selected user or overall
         user_sentiments = helper.analyze_sentiment(selectedUser, dataFrame)
