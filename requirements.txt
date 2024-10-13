@@ -7,5 +7,6 @@ Wordcloud
 nltk
 urlextract
 nltk==3.6.2
-scikit-learn==1.0.1
+numpy
+scikit-learn
 plotly==5.14.1
