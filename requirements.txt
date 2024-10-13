@@ -1,0 +1,11 @@
+streamlit==0.87.0
+matplotlib
+emoji==1.7.0
+seaborn
+pandas
+Wordcloud
+nltk
+urlextract
+nltk==3.6.2
+scikit-learn==1.0.1
+plotly==5.14.1
