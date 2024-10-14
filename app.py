@@ -253,9 +253,8 @@ if uploadedFile is not None:
                 ax.set_title('')
                 st.pyplot(plt)
             with col2:
-                positive_reply_time = timeDifference[timeDifference['replyTime'] >= 0]
                 fig, ax = plt.subplots(figsize=(8, 6))
-                ax.pie(positive_reply_time['replyTime'].head().tolist(), labels=positive_reply_time['user'].head().tolist(), autopct='%1.1f%%', colors=plt.cm.Dark2.colors)
+                ax.pie(timeDifference['replyTime'].head(), labels=timeDifference['user'].head().tolist(), autopct='%1.1f%%', colors=plt.cm.Dark2.colors)
                 ax.axis('equal')
                 plt.style.use('dark_background')
                 ax.set_title('')
