@@ -13,7 +13,7 @@ st.title("WhatsChat🔎")
 st.write("*Made by Shivam Gangal!👨🏻‍💻*")
 
 st.sidebar.title("WhatsApp Chat Analyzer")
-uploadedFile = st.sidebar.file_uploader("Choose a File🗃️")
+uploadedFile = st.sidebar.file_uploader("Choose a File🗃️. Only '.txt' format files are allowed.", type=['txt'])
 if uploadedFile is not None:
     bytesData = uploadedFile.getvalue()
     finalData = bytesData.decode("utf-8")
